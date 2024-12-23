@@ -1,8 +1,8 @@
 {
-  "name": "react-resume-template",
+  "name": "ResumeProject",
   "version": "2.0.0",
   "private": true,
-  "homepage":"https://weslingmedina.github.io/react-resume-template",
+  "homepage":"https://weslingmedina.github.io/ResumeProject/",
   "scripts": {
     "build": "yarn compile && yarn next build",
     "clean": "rm -rf build-tsc .next",

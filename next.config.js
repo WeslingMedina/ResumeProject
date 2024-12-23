@@ -38,8 +38,8 @@ const nextConfig = {
   
   // Condicional para producción
   ...(isProduction && {
-    basePath: '/react-resume-template',  // Nombre del repositorio en GitHub
-    assetPrefix: '/react-resume-template', // Necesario para servir los archivos estáticos correctamente
+    basePath: '/ResumeProject',  // Nombre del repositorio en GitHub
+    assetPrefix: '/ResumeProject', // Necesario para servir los archivos estáticos correctamente
     output: 'export',  // Genera los archivos estáticos para despliegue
   }),
 };
