@@ -1,5 +1,5 @@
 /* eslint-env node */
-
+const isProduction = process.env.NODE_ENV === 'production';
 // https://github.com/vercel/next.js/blob/master/packages/next/next-server/server/config.ts
 const nextConfig = {
   webpack: config => {
@@ -22,8 +22,9 @@ const nextConfig = {
   productionBrowserSourceMaps: false,
   reactStrictMode: true,
   swcMinify: true,
-  trailingSlash: false,
+  trailingSlash: true,
   images: {
+    unoptimized : true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -34,6 +35,13 @@ const nextConfig = {
       },
     ],
   },
+  
+  // Condicional para producción
+  ...(isProduction && {
+    basePath: '/react-resume-template',  // Nombre del repositorio en GitHub
+    assetPrefix: '/react-resume-template', // Necesario para servir los archivos estáticos correctamente
+    output: 'export',  // Genera los archivos estáticos para despliegue
+  }),
 };
 
 module.exports = nextConfig;
